@@ -107,15 +107,34 @@
       object-fit:cover;
     }
     .hero-badge{
-      position:absolute;
-      bottom:20px;
-      left:20px;
-      background:#ffffffee;
-      border-radius:16px;
-      padding:0.65rem 0.85rem;
-      box-shadow:0 10px 25px rgba(0,0,0,0.12);
-      font-size:0.85rem;
+      position: absolute;
+  bottom: 24px;
+  left: 65%;
+  transform: translateX(-50%);
+  min-width: 260px;
+  max-width: 90%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 14px;
+  font-size: 14px;
+  z-index: 20;
     }
+    .hero-carousel {
+  height: 400px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.hero-carousel .carousel-item {
+  height: 400px;
+}
+
+.hero-carousel img {
+  height: 100%;
+  object-fit: cover;
+}
 
     /* Bubble animation (pure CSS) [web:27][web:32] */
     .bubble-wrap{
@@ -262,12 +281,66 @@
       background:#ffffff;
       box-shadow:0 8px 18px rgba(0,0,0,0.04);
       height:100%;
+      transition: opacity 0.25s ease, transform 0.25s ease;
     }
+
     .project-card img{
       width:100%;
       height:170px;
       object-fit:cover;
     }
+
+    .project-card.hidden {
+      display: none !important;
+    }
+
+    .project-col.hidden {
+      display: none !important;
+    }
+
+    /* Carousel container */
+.project-image.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  height: 220px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+/* Track */
+.carousel-track {
+  display: flex;
+  width: 300%;
+  animation: slide 12s infinite ease-in-out;
+}
+
+/* Images */
+.carousel-track img {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px; 
+  flex-shrink: 0;
+  transition: transform 0.6s ease;
+  padding: 0;
+}
+
+/* Zoom on hover / touch */
+.project-card:hover .carousel-track img,
+.project-card:active .carousel-track img {
+  transform: scale(1.1);
+}
+
+/* Auto sliding animation */
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  30%  { transform: translateX(0); }
+
+  35%  { transform: translateX(-100%); }
+  65%  { transform: translateX(-100%); }
+}
 
     /* Why choose us */
     .why-item{

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="keywords" content="Vrisha Homes & Vrisha Designs">
-  <title>Contact Us | VrishaDesigns – Real Estate & Construction in Madurai</title>
-  <meta name="description" content="Contact VrishaDesigns for real estate and construction enquiries in Madurai. Phone: +91 91760 29125 | Get project quotes, site visits, and property consultations.">
+  <title>Contact Us | VrishaDesigns – Real Estate & Construction</title>
+  <meta name="description" content="Contact VrishaDesigns for real estate and construction enquiries. Phone: +91 91760 29125 | Get project quotes, site visits, and property consultations.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap 5 -->
@@ -74,7 +74,7 @@
           </p>
           <div class="d-flex gap-3 mb-4">
             <a href="tel:+919943097989" class="btn btn-lg rounded-pill px-4 py-2" style="background:linear-gradient(135deg,var(--accent-green),#059669);color:#fff;">
-              <i class="bi bi-telephone me-2"></i>+91 91760 29125
+              <i class="bi bi-telephone me-2"></i>+91 99430 97989
             </a>
             <a href="https://wa.me/919176029125" target="_blank" class="btn btn-lg rounded-pill px-4 py-2" style="background:#25d366;color:#fff;">
               <i class="bi bi-whatsapp me-2"></i>WhatsApp
@@ -172,7 +172,7 @@
       <div class="col-lg-10" data-aos="zoom-in">
         <div class="text-center mb-5">
           <h2 class="display-6 fw-bold mb-3" style="color:var(--dark-blue);">Find Us in Madurai</h2>
-          <p class="lead text-muted">Serving all areas of Madurai with site visits and consultations</p>
+          <p class="lead text-muted">Serving all areas with site visits and consultations</p>
         </div>
         <div class="map-container">
           <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3930.0815456393525!2d78.17594439999999!3d9.927166699999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwNTUnMzcuOCJOIDc4wrAxMCczMy40IkU!5e0!3m2!1sen!2sin!4v1767087722059!5m2!1sen!2sin" 
@@ -253,10 +253,13 @@
           <li><a href="mailto:info@vrishadesigns.com">info@vrishadesigns.com</a></li>
         </ul>
         <div class="d-flex gap-2">
-          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61585715766804" aria-label="Facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.pinterest.com/vrishadesigns/" aria-label="Pinterest" target="_blank"><i class="bi bi-pinterest"></i></a>
+          <a href="https://www.youtube.com/@VrishaDesigns" aria-label="Youtube" target="_blank"><i class="bi bi-youtube"></i></a>
+          <a href="https://x.com/vrisha_Designs" aria-label="X" target="_blank"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://www.instagram.com/_vrisha_designs_/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
           <a href="https://wa.me/919176029125" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <!-- <a href="#" aria-label="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a> -->
         </div>
       </div>
     </div>
@@ -294,45 +297,16 @@
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/app.js"></script>
+
 <script>
-  // AOS Init
+  // Init AOS animations [web:48][web:55]
   AOS.init({
-    duration: 1000,
+    duration: 750,
     once: true,
-    offset: 100
-  });
-
-  // Form Submission
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Simulate form submission
-    const submitBtn = document.querySelector('.submit-btn');
-    const originalText = submitBtn.innerHTML;
-    
-    submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Sending...';
-    submitBtn.disabled = true;
-    
-    setTimeout(() => {
-      submitBtn.innerHTML = '<i class="bi bi-check-circle-fill me-2 text-success"></i>Thank you!';
-      setTimeout(() => {
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-        document.getElementById('contactForm').reset();
-        // Scroll to top
-        document.querySelector('.contact-hero').scrollIntoView({behavior: 'smooth'});
-      }, 2000);
-    }, 1500);
-  });
-
-  // WhatsApp Integration
-  document.querySelectorAll('[href^="https://wa.me"]').forEach(link => {
-    link.addEventListener('click', () => {
-      const message = encodeURIComponent('Hi, I\'m interested in real estate/construction services. Can we discuss my project requirements?');
-      link.href += `?text=${message}`;
-    });
+    offset: 120,
+    easing: 'ease-out-cubic'
   });
 </script>
-
 </body>
 </html>
