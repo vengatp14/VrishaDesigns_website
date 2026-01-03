@@ -1609,7 +1609,7 @@ border: 1px solid rgba(255, 255, 255, 0.43);
 /* Mobile */
 @media (max-width: 576px) {
   .navbar-logo {
-    height: 60px;
+    height: 65px;
   }
 }
 @media (max-width: 350px) {
