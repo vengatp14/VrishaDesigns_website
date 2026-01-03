@@ -1,13 +1,13 @@
 /* home page  */
 
     :root{
-      --text-dark:#0b1730;
+      --text-dark:#05325f;
       --accent-green:#10b981;
       --accent-orange:#f59e0b;
       --accent-purple:#8b5cf6;
-      --sky-blue:#28a9ff;
+      --sky-blue:#B9943C;
       --dark-blue:#05325f;
-      --accent-blue:#10b981;
+      --accent-blue:#05325f;
       --bg-light:#ffffff;
       --section-pad:70px;
     }
@@ -31,6 +31,8 @@
       box-shadow:0 2px 15px rgba(0,0,0,0.05);
       background:#ffffffee;
       backdrop-filter:blur(6px);
+      top: 0;
+      z-index: 1000;
     }
     .nav-link{
       font-weight:500;
@@ -39,12 +41,15 @@
     .nav-link.active{
       color:var(--sky-blue)!important;
     }
+    .button {
+      color: #B9943C;
+    }
+  
 
     /* Hero + Bubble Background */
     .hero{
       position:relative;
       overflow:hidden;
-      padding-top:110px;
       padding-bottom:var(--section-pad);
       background: radial-gradient(circle at top left,#e7f6ff 0%,#ffffff 45%,#f2f8ff 100%);
     }
@@ -75,7 +80,7 @@
       box-shadow:0 8px 20px rgba(40,169,255,0.28);
     }
     .btn-main:hover{
-      background:#1295ec;
+      background:#05325f;
       color:#fff;
     }
     .btn-ghost{
@@ -135,6 +140,51 @@
   height: 100%;
   object-fit: cover;
 }
+
+.navbar-logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+
+.secondary-logo {
+  height: 38px; 
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .navbar-logo {
+    height: 34px;
+  }
+}
+
+.hero, .page-hero, .projects-hero, .services-hero, .contact-hero {
+  padding-top: 110px; 
+}
+@media (max-width: 767.98px) {
+  .hero, .page-hero, .projects-hero, .services-hero, .contact-hero {
+    padding-top: 90px;
+  }
+}
+
+/* Project tabs button color */
+#projectTabs .nav-link {
+  color: #B9943C;
+  background-color: transparent;
+}
+
+/* Active tab */
+#projectTabs .nav-link.active {
+  background-color: #05325f;
+  color: #ffffff;
+}
+
+/* Hover effect */
+#projectTabs .nav-link:hover {
+  background-color: #05325f;
+  color: #ffffff;
+}
+
 
     /* Bubble animation (pure CSS) [web:27][web:32] */
     .bubble-wrap{
@@ -508,10 +558,43 @@
       }
       body{
         padding-bottom:52px;
+        padding-top: 110px;
       }
     }
+    @media (max-width: 767.98px) {
+  body {
+    padding-top: 90px; 
+  }
+}
+
+body {
+  padding-top: 110px; 
+}
+
+.logo-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+}
+
+.logo-text {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #05325f;
+  letter-spacing: 0.4px;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .logo-text {
+    font-size: 10px;
+  }
+}
+
+
 /* about page  */
-  
 
     .navbar{
       box-shadow:0 2px 12px rgba(0,0,0,0.05);
@@ -1182,7 +1265,12 @@
       min-height:100vh;
       position:relative;
       overflow:hidden;
+      padding-top: 0 !important;
+      margin-top: 0 !important;
       background:linear-gradient(135deg,#e7f6ff 0%,#f0f9ff 50%,#ffffff 100%);
+    }
+    .contact-hero .min-vh-100 {
+      min-height: calc(100vh - 110px);
     }
     .particles-bg{
       position:absolute;
@@ -1243,6 +1331,7 @@
     }
     .contact-card:hover{transform:translateY(-10px);box-shadow:0 30px 70px rgba(0,0,0,0.15);}
     .contact-icon{
+      padding: 20px;
       width:70px;height:70px;border-radius:18px;
       background:linear-gradient(135deg,var(--sky-blue),var(--dark-blue));
       display:flex;align-items:center;justify-content:center;
