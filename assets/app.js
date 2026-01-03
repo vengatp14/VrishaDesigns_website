@@ -23,6 +23,21 @@
 
   sections.forEach(sec=>observer.observe(sec));
 
+  // Highlight active nav link based on current page filename (desktop + mobile)
+  (function setActiveByPage(){
+    const page = window.location.pathname.split('/').pop() || 'index.html';
+    const isIndex = page === '' || page === 'index.html';
+    // Default: mark home active on index page; otherwise match filename
+    navLinks.forEach(l=>{
+      const href = l.getAttribute('href').split('/').pop() || 'index.html';
+      l.classList.toggle('active', (isIndex && href === 'index.html') || (!isIndex && href === page));
+    });
+    mobileLinks.forEach(l=>{
+      const href = l.getAttribute('href').split('/').pop() || 'index.html';
+      l.classList.toggle('active', (isIndex && href === 'index.html') || (!isIndex && href === page));
+    });
+  })();
+
   // Current year in footer
   document.getElementById("year").textContent = new Date().getFullYear();
 
