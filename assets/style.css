@@ -37,7 +37,7 @@
     .nav-link{
       font-weight:1000;
       font-size:0.95rem;
-      color: #092749;
+      color: #1f3f69;
     }
     .nav-link.active{
       color:var(--sky-blue)!important;
